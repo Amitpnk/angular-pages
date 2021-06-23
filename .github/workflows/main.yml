@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build production website
-        run: ng build --prod --base-href "https://Amitpnk.github.io/angular-pages/"
+        run: npm run build:ci
 
       - name: Deploy to GitHub Pages
         run: ngh --dir dist/sample
