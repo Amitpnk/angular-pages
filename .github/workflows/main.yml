@@ -22,9 +22,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Delete temporary directories
-        run: npm run clean
-
       - name: Build production website
         run: ng build --prod --base-href "https://Amitpnk.github.io/angular-pages/"
 
