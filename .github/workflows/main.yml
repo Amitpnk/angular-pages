@@ -34,7 +34,21 @@ jobs:
 
       # - name: Deploy to GitHub Pages
       #   run: ngh --dir dist/sample
-  
+
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copycat
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.GH_PAGES }}
+        src_path: /deploy_dist/index.html
+        dst_path: /deploy_dist/404.html
+        dst_owner: amitpnk
+        dst_repo_name: angular-pages
+        dst_branch: gh-pages
+        src_branch: gh-pages
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
