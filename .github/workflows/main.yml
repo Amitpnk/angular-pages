@@ -52,15 +52,22 @@ jobs:
   copy:
     runs-on: ubuntu-latest
     needs: build
+    # steps:
+    #   - uses: actions/checkout@master
+    #   - name: copy file
+    #     uses: canastro/copy-file-action@master
+    #     with:
+    #       GITHUB_TOKEN: ${{ secrets.GH_PAGES }}
+    #       BRANCH: gh-pages
+    #       source: "index.html"
+    #       target: "404.html"
     steps:
-      - uses: actions/checkout@master
-      - name: copy file
-        uses: canastro/copy-file-action@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAGES }}
-          BRANCH: gh-pages
-          source: "index.html"
-          target: "404.html"
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Make copy of index.html 📚
+        run: |
+          chmod u+x "${GITHUB_WORKSPACE}/copyfile.sh"
+          bash "${GITHUB_WORKSPACE}/copyfile.sh"
 
   deploy:
     runs-on: ubuntu-latest

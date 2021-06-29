@@ -1,0 +1,1 @@
+cp dist/sample/index.html dist/sample/404.html
