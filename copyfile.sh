@@ -1,1 +1,1 @@
-cp deploy_dist/sample/index.html deploy_dist/sample/404.html
+cp index.html 404.html
