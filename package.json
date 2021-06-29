@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:ci": "ng build --prod --base-href /angular-pages/",
-    "postbuild:ci":"xcopy \"./dist/sample/index.html\" \"./dist/sample/404.html\" /Y /F"
+    "xpostbuild:ci":"xcopy \"./dist/sample/index.html\" \"./dist/sample/404.html\" /Y /F"
   },
   "private": true,
   "dependencies": {
